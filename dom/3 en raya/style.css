@@ -1,0 +1,62 @@
+html,body{
+	width:100%;
+	height: 100%;
+	background-color: #999;
+	text-align:center;
+}
+
+div#tablero{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+    flex-direction: column;
+	width: 80%;
+	height: 80%;
+	background-color: #666;
+	margin:auto;
+
+}
+
+div.fila{
+	display: -webkit-flex;
+	display: flex;
+	width:100%;
+	height:100%;
+	/* //background-color: green; */
+
+	-webkit-align-self:center;
+	align-self:center;
+}
+
+div.casilla{
+	display: -webkit-flex;
+	display: flex;
+	background-color: lightyellow;
+	text-align:center;
+	width:95%;
+	height:90%;
+	margin: 1%;
+	-webkit-align-self:center;
+	align-self:center;
+}
+/*.casilla:hover{
+	background-color:#f48844;
+}*/
+
+div.dentroCasilla{
+	font-size:30pt;
+	margin:auto;
+}
+/*esto es solo para la parte estetica*/
+
+div.marca{
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+div.marcaX{
+	background-image: url('marcax.png');
+}
+div.marcaO{
+	background-image: url('marcao.png');
+}

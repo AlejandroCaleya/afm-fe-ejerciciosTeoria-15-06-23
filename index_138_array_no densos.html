@@ -1,0 +1,75 @@
+<!-- Hasta ahora siempre que inicializamos los array no dejamos espacios sin utilizar. Javascript permite crear array e inicializar componentes no contiguas.
+
+Por ejemplo podemos crear un vector e inicializar las componentes con subíndice 5 y 10:
+
+  let vec=[];
+  vec[5]=100;
+  vec[10]=200;
+
+Este tipo de array se los llama array dispersos ya que no tenemos todas las componentes contiguas ocupadas. Veamos con un ejemplo que pasa con la propiedad length y cuando accedemos a componentes que no existen en el vector:
+
+Si ejecutamos este programa la salida en la página será:
+
+Atributo length:11
+undefined
+undefined
+undefined
+undefined
+undefined
+100
+undefined
+undefined
+undefined
+undefined
+200
+
+Como podemos ver el atributo length almacena teniendo en cuenta la posición más grande asignada (en nuestro ejemplo vec[10])
+
+Por otro lado cuando accedemos a componentes no inicializadas obtenemos el valor "undefined".
+
+Es bueno tener en cuenta que las componentes no inicializadas no reservan espacio en memoria, luego si asignamos como subíndice el dni de una persona:
+
+  dni[20438470]=100;
+
+no significa que se reservan más de veinte millones de componentes para los otros elementos del vector. La reserva de espacio sucede a medida que ocupamos espacios del vector.
+Problema
+
+Ingresar por teclado un nro de cliente y el monto a depositar. Almacenar en un vector, utilizar como subíndice el nro de cliente y almacenar el monto depositado. Sumar todos los depósitos recorriendo el vector e identificando las componentes cargadas (es decir las que tienen un valor distinto a undefined). Imprimir la suma total depositada y la cantidad de clientes que depositaron. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        let depositos = [];
+        let nro, monto;
+        do {
+            nro = prompt('Ingrese nro de cliente (0 finalizar)');
+            nro = parseInt(nro);
+            if (nro != 0) {
+                monto = prompt('Ingrese monto a depositar');
+                monto = parseInt(monto);
+                depositos[nro] = monto;
+            }
+        } while (nro != 0);
+        let suma = 0;
+        let canti = 0;
+        for (let f = 0; f < depositos.length; f++) {
+            if (depositos[f] != undefined) {
+                suma = suma + depositos[f];
+                canti++;
+            }
+        }
+        document.write('Cantidad de depósitos:' + canti + '<br>');
+        document.write('Total depositado por todos los clientes:' + suma);
+    </script>
+
+</body>
+
+</html>

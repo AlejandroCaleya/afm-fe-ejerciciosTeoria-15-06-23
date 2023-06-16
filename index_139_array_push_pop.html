@@ -1,0 +1,72 @@
+<!-- Como los Array en Javascript son objetos, los mismos tienen una serie de métodos que nos facilitan trabajar con ellos.
+
+Para insertar elementos en un vector hemos visto que con solo asignar un valor al vector en un determinado índice el dato queda almacenado y eventualmente el atributo length modificado:
+
+  let vec=[];
+  vec[0]=10;
+  vec[1]=20;  
+  document.write(vec.length);  //imprime 2
+
+Esta sintaxis tenemos que tener cuidado como variamos el subíndice para no dejar componentes vacías si queremos implementar un array denso.
+
+Una variante para resolver este mismo problema es utilizar el método push del objeto Array. Este método añade el valor al final del vector:
+
+  let vec=[];
+  vec.push(10);
+  vec.push(20);  
+  document.write(vec.length);  //imprime 2
+
+Automáticamente cuando llamamos al método push el valor que le pasamos en el parámetro se almacena en el vector y se incrementa el atributo length.
+
+Podemos inclusive llamar al método push pasando más de 1 parámetro:
+
+  let vec=[];
+  vec.push(10,20);
+  document.write(vec.length);  //imprime 2
+
+El método inverso llamado pop extrae el último elemento del Array y decrementa en uno el atributo length:
+
+  let vec=[];
+  vec.push(10,20,30,40);  
+  document.write(vec.length+'<br>');  //imprime 4
+  vec.pop();
+  document.write(vec.length+'<br>');  //imprime 3
+  document.write(vec.pop()+'<br>');   //imprime un 30
+  document.write(vec.length+'<br>');  //imprime 2
+
+El método pop() además de eliminar el último elemento del vector retorna el valor almacenado en dicha componente.
+
+Si llamamos al método pop y el vector está vacío retorna el valor undefined.
+Problema
+
+Realizar la carga de sueldos por teclado hasta que se ingrese el cero. Almacenar todos los valores ingresados en un vector empleando el método push. Mostrar la suma de sueldos ingresados. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        let sueldos = [];
+        let monto;
+        do {
+            monto = parseInt(prompt('Ingrese el sueldo (0 para finalizar):'));
+            if (monto != 0) {
+                sueldos.push(monto);
+            }
+        } while (monto != 0);
+        let suma = 0;
+        for (let f = 0; f < sueldos.length; f++) {
+            suma = suma + sueldos[f];
+        }
+        document.write('El total en sueldos ingresado es:' + suma);
+    </script>
+
+</body>
+
+</html>

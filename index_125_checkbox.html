@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <form>
+        <input type="checkbox" id="checkbox1">JavaScript
+        <br>
+        <input type="checkbox" id="checkbox2">PHP
+        <br>
+        <input type="checkbox" id="checkbox3">JSP
+        <br>
+        <input type="checkbox" id="checkbox4">VB.Net
+        <br>
+        <input type="button" value="Mostrar" onClick="contarSeleccionados()">
+    </form>
+
+    <script>
+        function contarSeleccionados() {
+            let cant = 0;
+            if (document.getElementById('checkbox1').checked) {
+                cant++;
+            }
+            if (document.getElementById('checkbox2').checked) {
+                cant++;
+            }
+            if (document.getElementById('checkbox3').checked) {
+                cant++;
+            }
+            if (document.getElementById('checkbox4').checked) {
+                cant++;
+            }
+            alert('Conoce ' + cant + ' lenguajes');
+        }
+    </script>
+
+</body>
+
+</html>

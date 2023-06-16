@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <form>
+        <p><select id="select1" onChange="cambiarColor()">
+            <option value="rojo">Rojo</option>
+            <option value="55555">Verde</option>
+            <option value="0000ff">Azul</option>
+        </select></p>
+        <p>Número de índice seleccionado del objeto SELECT:<input 
+            type="text" id="text1"></p>
+        <p>Texto seleccionado:<input type="text" id="text2"></p>
+        <p> Valor asociado:<input type="text" id="text3"></p>
+        <p id="demo"></p>
+    </form>
+
+    <script>
+        function cambiarColor() {
+            let seleccion = document.getElementById('select1');
+            document.getElementById('demo').innerHTML=  seleccion.selectedIndex;
+            document.getElementById('text2').value = seleccion.options[seleccion.selectedIndex].text;
+            document.getElementById('text3').value = seleccion.options[seleccion.selectedIndex].value;
+        }
+    </script>
+
+</body>
+
+</html>

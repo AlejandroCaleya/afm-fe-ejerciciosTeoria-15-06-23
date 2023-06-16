@@ -1,0 +1,66 @@
+<!-- Todos los vectores donde almacenamos en forma contigua todos sus elementos son llamados array densos.
+
+Almacenar elementos siguiendo esta premisa tiene como ventaja poder acceder a sus elementos mediante una estructura repetitiva disponiendo el contador del for como subíndice.
+
+Una propiedad de suma utilidad trabajando los vectores sin dejar subíndices sin utilizar es la propiedad length. La propiedad length almacena la cantidad de componentes que tiene el vector.
+Problema
+
+Crear un vector vacío. Mediante una estructura repetitiva solicitar la carga de elementos por teclado hasta que se ingrese el cero. No almacenar dicho valor en el vector. Luego sumar todas las componentes del vector, mostrar dicha suma y el tamaño del vector.
+
+Definimos un vector vacío:
+
+        let vec = [];
+
+Creamos una estructura repetitiva do/while que se ejecutará hasta que ingresemos en la variable valor el cero:
+
+        do {
+            valor = prompt('Ingrese un valor entero (0 para finalizar)', '');
+            valor = parseInt(valor);
+            if (valor != 0) {
+                vec[indice] = valor;
+                indice++;
+            }
+        } while (valor != 0);
+
+Cada vez que se ingresa un valor distinto a cero se lo asignamos a una componente del vector y para que ocupen posiciones consecutivas definimos un contador llamado indice que se inicializa en cero previo a la estructura repetitiva:
+
+            if (valor != 0) {
+                vec[indice] = valor;
+                indice++;
+            }
+
+Cuando salimos del do/while mostramos el atributo length del vector y sumamos sus componentes para mostrar dicho acumulador. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        let vec = [];
+        let valor;
+        let indice = 0;
+        do {
+            valor = prompt('Ingrese un valor entero (0 para finalizar)', '');
+            valor = parseInt(valor);
+            if (valor != 0) {
+                vec[indice] = valor;
+                indice++;
+            }
+        } while (valor != 0);
+        let suma = 0;
+        for (let f = 0; f < vec.length; f++) {
+            suma = suma + vec[f];
+        }
+        document.write('Se ingresaron ' + vec.length + ' valores<br>');
+        document.write('La suma de los valores ingresados es:' + suma);
+    </script>
+
+</body>
+
+</html>

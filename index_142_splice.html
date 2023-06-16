@@ -1,0 +1,33 @@
+<!-- El método splice permite eliminar componentes, insertar componentes o eliminar e insertar componentes en forma simultánea.
+Borrar
+
+Veamos primero como podemos utilizar éste método para borrar elementos. Para borrar elementos debemos indicar dos parámetros al método splice, el primero indica a partir de que posición procedemos a borrar componentes y el segundo parámetro indica la cantidad de componentes a borrar.
+
+Veamos con un ejemplo como eliminamos 3 componentes del vector a partir de la segunda componentes: -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        let vec = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        document.write('Vector inicial<br>');
+        for (let f = 0; f < vec.length; f++) {
+            document.write(vec[f] + '<br>');
+        }
+        vec.splice(1, 3, 10, 20, 30, 40, 50);
+        document.write('Vector luego de borrar 3 elementos e insertar otros 5 valores<br>');
+        for (let f = 0; f < vec.length; f++) {
+            document.write(vec[f] + '<br>');
+        }
+    </script>
+
+</body>
+
+</html>

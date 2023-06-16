@@ -1,0 +1,55 @@
+<!-- Así como el método push inserta un elemento al final del vector el método unshift inserta un elemento al principio del vector y desplaza el resto una posición.
+
+El método shift extrae el primer elemento del vector y desplaza hacia delante el resto de elementos del vector.
+Problema
+
+Ingresar valores por teclado. Los valores menores a 100 ingresarlos al principio del vector y los mayores o iguales a 100 ingresarlos al final. Se finaliza la carga de datos al ingresar el cero. Cuando sale del do/while extraer el último valor ingresado que es el cero del vector. Imprimir el vector en la página
+
+Si el valor es menor a 100 procedemos a llamar al método unshift que lo inserta al principio del vector en caso contrario se inserta al final mediante el método push:
+
+            if (valor < 100) {
+                vec.unshift(valor);
+            } else {
+                vec.push(valor);
+            }
+
+Fuera del do/while procedemos a extraer el primer elemento del vector que es el cero:
+
+        vec.shift();
+
+Finalmente procedemos a imprimir en forma completa el vector:
+
+        for (let f = 0; f < vec.length; f++) {
+            document.write(vec[f] + '<br>');
+        } -->
+
+        <!DOCTYPE html>
+        <html>
+        
+        <head>
+            <title>Ejemplo de JavaScript</title>
+            <meta charset="UTF-8">
+        </head>
+        
+        <body>
+        
+            <script>
+                let vec = [];
+                let valor;
+                do {
+                    valor = parseInt(prompt('Ingresar un valor (0 para finalizar):'));
+                    if (valor < 100) {
+                        vec.unshift(valor);
+                    } else {
+                        vec.push(valor);
+                    }
+                } while (valor != 0);
+                vec.shift();
+                for (let f = 0; f < vec.length; f++) {
+                    document.write(vec[f] + '<br>');
+                }
+            </script>
+        
+        </body>
+        
+        </html>

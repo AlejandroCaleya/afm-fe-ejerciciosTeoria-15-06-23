@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        let vec = [100, 5, 60, 3, 90];
+        document.write('Vector antes de ordenarlo<br>');
+        for (let f = 0; f < vec.length; f++) {
+            document.write(vec[f] + '<br>');
+        }
+        vec.sort(function(v1, v2) {
+            if (v1 < v2)
+                return -1; // v1 es menor que v2
+            else
+                return 1; // v1 es mayor que v2
+        });
+        document.write('Vector después de ordenarlo<br>');
+        for (let f = 0; f < vec.length; f++) {
+            document.write(vec[f] + '<br>');
+        }
+    </script>
+
+</body>
+
+</html>

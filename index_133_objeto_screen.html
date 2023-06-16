@@ -1,0 +1,38 @@
+<!-- 
+El objeto screen colabora directamente con el objeto window:
+
+El objeto screen ofrece información acerca del monitor donde se está ejecutando el navegador.
+La propiedades principales del objeto screen son:
+
+availHeight : El alto de la pantalla en pixeles disponible para el navegador.
+availWidth : El ancho de la pantalla en pixeles disponible para el navegador.
+colorDepth : Representa el número de bits usados para representar los colores.
+height : El alto de la pantalla en pixeles.
+width : El ancho de la pantalla en pixeles. 
+
+El siguiente programa muestra el valor almacenado en las cinco propiedades que tiene el objeto screen:
+
+No olvidar que el objeto screen es una propiedad del objeto window, por lo que haber dispuesto la sintaxis: window.screen.width etc. es la forma más completa, pero más tediosa de escribir (recordar que el objeto window es el principal y lo podemos obviar cuando accedemos a sus propiedades o métodos) -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        document.write('Valores de las propiedades del objeto screen:<br>');
+        document.write('availHeight :' + screen.availHeight + '<br>');
+        document.write('availWidth :' + screen.availWidth + '<br>');
+        document.write('height :' + screen.height + '<br>');
+        document.write('width :' + screen.width + '<br>');
+        document.write('colorDepth :' + screen.colorDepth);
+    </script>
+
+</body>
+
+</html>

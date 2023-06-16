@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="div1"></div>
+
+    <script>
+        function generarListaOrdenada(vec) {
+            function comienzo() {
+                s = '<ol>';
+            }
+
+            function fin() {
+                s = s + '</ol>';
+            }
+
+            let s = '';
+            comienzo();
+            for (let f = 0; f < vec.length; f++) {
+                s = s + '<li>' + vec[f] + '</li>';
+            }
+            fin();
+            return s;
+        }
+
+        let opciones = ['Opción a', 'Opción b', 'Opción c', 'Opción d'];
+        document.getElementById('div1').innerHTML = generarListaOrdenada(opciones);
+    </script>
+
+</body>
+
+</html>

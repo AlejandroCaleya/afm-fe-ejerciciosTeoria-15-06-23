@@ -1,0 +1,36 @@
+<!-- El evento onMouseOver se ejecuta cuando pasamos la flecha del mouse sobre un elemento HTML y el evento onMouseOut cuando
+la flecha abandona el mismo.
+
+Para probar estos eventos implementaremos una página que cambie el color de un cuadrado de 200px de ancho y 200px de
+alto.
+
+Implementaremos una función que cambie el color con un valor que llegue como parámetro. Cuando retiramos la flecha del
+mouse volvemos a pintar de negro el fondo de cuadrado:
+ -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <a href="#" onclick="pintar('pink')" onMouseOver="pintar('#f00')" onMouseOut="pintar('black')">Rojo</a> -
+    <a href="#" onMouseOver="pintar('green')" onMouseOut="pintar('#000')">Verde</a> -
+    <a href="#" onMouseOver="pintar('#00f')" onMouseOut="pintar('#000')">Azul</a>
+    <div id="cuadrado1" style="background:#000;width:200px;height:200px"></div>
+
+    <script>
+        function pintar(fondo) {
+            document.getElementById('cuadrado1').style.backgroundColor = fondo;
+        }
+    </script>
+
+</body>
+
+</html>

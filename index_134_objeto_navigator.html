@@ -1,0 +1,33 @@
+Contiene información sobre el navegador web. La implementación de este objeto varía entre navegadores (Chrome, Edge, IExplorer, FireFox, Opera, etc.)
+
+Las propiedades comunes a estos navegadores son:
+
+appName : almacena el nombre oficial del navegador.
+appVersion : almacena la versión del navegador.
+cookieEnabled : almacena si las cookies están activas en el navegador.
+platform : almacena la plataforma donde el navegador se está ejecutando.
+plugins : almacena un array de los plugin cargados en el navegador.
+
+Este pequeño programa muestra los valores de las propiedades antes anunciadas:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        document.write('Valores de las propiedades del objeto navigator:<br>');
+        document.write('appName :' + navigator.appName + '<br>');
+        document.write('appVersion :' + navigator.appVersion + '<br>');
+        document.write('cookieEnabled :' + navigator.cookieEnabled + '<br>');
+        document.write('plugins :' + navigator.plugins.length + '<br>');
+    </script>
+
+</body>
+
+</html>

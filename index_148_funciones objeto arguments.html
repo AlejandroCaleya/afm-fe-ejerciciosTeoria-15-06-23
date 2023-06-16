@@ -1,0 +1,39 @@
+<!-- Cuando llamamos a una función JavaScript crea automáticamente un objeto llamado "arguments" que almacena los valores que
+le pasamos a dicha función. También este objeto arguments almacena en una propiedad llamada length la cantidad de
+parámetros que llegaron. Veamos un ejemplo muy sencillo.
+
+Confeccionar una función que retorne la suma de dos enteros: -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <div id="lista1"></div>
+
+    <script>
+        function iniciar() {
+            generarLista('lista1', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis');
+        }
+
+        function generarLista() {
+            let s = '<ol>';
+            for (let f = 1; f < arguments.length; f++) {
+                s = s + '<li>' + arguments[f] + '</li>';
+            }
+            s = s + '</ol>';
+            let elemento1 = document.getElementById(arguments[0]);
+            elemento1.innerHTML = s;
+        }
+
+        iniciar();
+    </script>
+
+</body>
+
+</html>

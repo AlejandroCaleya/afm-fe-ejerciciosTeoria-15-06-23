@@ -1,0 +1,59 @@
+<!-- 
+
+Hasta ahora siempre que hemos implementado una función le hemos pasado como parámetro tipos de dato numérico, string, boolean, objetos etc.
+Ahora veremos que también podemos implementar funciones que reciban como parámetro otra función.
+
+Primero veamos un simple ejemplo para entender que una función se la podemos asignar a una variable y luego a través de esta variable llamar a la función: -->
+
+<!-- Vemos que definimos una variable llamada f1 y le asignamos la función propiamente dicha:
+
+        let f1 = function(x, y) {
+            let s = x + y;
+            return s;
+        }
+
+Luego para llamar la función lo hacemos a través de la variable f1:
+
+  document.write(f1(4,6)+'<br>');  
+
+De la misma manera podemos definir una segunda variable que obtenga la referencia de la otra variable y podremos entonces llamar a la misma función con este segundo nombre:
+
+        let f2 = f1;
+        document.write(f2(3, 3) + '<br>');
+
+Problema
+
+Ahora si implementaremos otro problema que declare una función que reciba tres parámetros, el último de ellos es una función: -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        function calcular(x, y, fu) {
+            let resu = fu(x, y);
+            return resu;
+        }
+
+        let s1 = calcular(10, 5, function(v1, v2) {
+            return v1 + v2;
+        });
+
+        document.write(s1 + '<br>');
+
+        let s2 = calcular(10, 5, function(v1, v2) {
+            return v1 - v2;
+        });
+
+        document.write(s2 + '<br>');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!-- Como hemos visto un array o arreglo es una estructura de datos que permite almacenar elementos y luego acceder a los mismos por medio de subíndices.
+
+Recordemos que Javascript administra los array mediante un objeto especializado llamado Array.
+
+Un array puede almacenar en sus componentes elementos de datos distintos y su tamaño puede crecer a lo largo de la ejecución del programa.
+
+Tenemos muchas formas de inicializar un array en Javascript según nuestra situación particular, veamos con ejemplos diferentes formas:
+
+Creación de un array sin elementos:
+
+  let vector1=new Array();
+
+Otra sintaxis para crear un array sin elementos:
+
+  let vector2=[];
+
+Creación de un array indicando la cantidad de componentes iniciales que podrá almacenar:
+
+  let vector3=new Array(5);
+
+Creación e inicialización llamando al constructor Array y pasando como parámetros los valores a almacenar en las componentes:
+
+  let vector4=new Array(1,70,'juan');  
+
+Creación e inicialización de un array utilizando los corchetes:
+
+  let vector5=[1,70,'juan'];  
+
+Para probar las distintas formas de creación de array implementaremos un programa que cree 5 Array, cargue algunos elementos y muestre la primer componente de cada uno de ellos:  -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        let vector1 = new Array();
+        vector1[0] = 1;
+
+        let vector2 = [];
+        vector2[0] = 1;
+
+        let vector3 = new Array(5);
+        vector3[0] = 1;
+
+        let vector4 = new Array(1, 70, 'juan');
+        let vector5 = [1, 70, 'juan'];
+
+        document.write(vector1[0] + '<br>');
+        document.write(vector2[0] + '<br>');
+        document.write(vector3[0] + '<br>');
+        document.write(vector4[0] + '<br>');
+        document.write(vector5[0] + '<br>');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!-- El método slice (traducido al castellano: trozo) retorna un trozo del vector. La sintaxis es:
+
+ vec.slice(2,4);
+
+El primer parámetro indica a partir de que elementos debe retornar y el segundo parámetro hasta cual elemento (sin incluir dicha posición)
+El método slice no modifica el vector original, sino que retorna otro vector con las componentes indicadas.
+
+Veamos con un ejemplo el empleo del método slice: -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        let vec = [10, 20, 30, 40, 50, 60];
+        document.write('Vector original<br>');
+        for (let f = 0; f < vec.length; f++) {
+            document.write(vec[f] + '-');
+        }
+        document.write('<br>');
+        let vec2 = vec.slice(1, 4);
+        document.write('Vector resultante de la llamada a slice<br>');
+        for (let f = 0; f < vec2.length; f++) {
+            document.write(vec2[f] + '-');
+        }
+    </script>
+
+</body>
+
+</html>

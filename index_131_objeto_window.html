@@ -1,0 +1,100 @@
+<!-- Al objeto window lo hemos estado usando constantemente. Representa la ventana del navegador.
+window es un objeto global y tiene los siguienes métodos:
+
+alert: Muestra un diálogo de alerta con un mensaje
+(a esta responsabilidad la hemos utilizado desde los primeros temas)
+prompt: Muestra un diálogo para la entrada de un valor de tipo string
+(utilizado desde el primer momento)
+confirm: Muestra un diálogo de confirmación con los botones Confirmar y Cancelar.
+open y close: abre o cierra una ventana del navegador.
+Podemos especificar el tamaño de la ventana, su contenido, etc.
+[Variable=][window.]open(URL, nombre, propiedades)
+Permite crear (y abrir) una nueva ventana. Si queremos tener acceso a ella
+desde la ventana donde la creamos, deberemos asignarle una variable,
+sino simplemente invocamos el método: el navegador automáticamente sabrá
+que pertenece al objeto window.
+El parámetro URL es una cadena que contendrá la dirección de la ventana
+que estamos abriendo: si está en blanco, la ventana se abrirá con una página
+en blanco.
+Las propiedades son una lista, separada por comas, de algunos de los
+siguientes elementos:
+• toolbar[=yes|no]
+• location[=yes|no]
+• directories[=yes|no]
+• status[=yes|no]
+• menubar[=yes|no]
+• scrollbars[=yes|no]
+• resizable[=yes|no]
+• width=pixels
+• height=pixels
+
+Es bueno hacer notar que a todas estas funciones las podemos llamar anteponiéndole el nombre del objeto window, seguida
+del método o en forma resumida indicando solamente el nombre del método (como lo hemos estado haciendo), esto es posible
+ya que el objeto window es el objeto de máximo nivel.
+
+Ej:
+let nombre=window.prompt("Ingrese nombre");
+o
+let nombre=prompt("Ingrese nombre");
+
+Para reducir la cantidad de caracteres que se tipean normalmente encontraremos los programas tipeados de la segunda
+forma, es decir sin indicar el nombre del objeto window.
+
+El siguiente programa muestra varios de los métodos disponibles del objeto window: -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <p>Este programa permite analizar la llamada a distintas responsabilidades del objeto window.</p>
+    <form>
+        <br>
+        <input type="button" value="open()" onClick="abrir()">
+        <br>
+        <input type="button" value="open con parámetros" onClick="abrirParametros()">
+        <br>
+        <input type="button" value="alert" onClick="mostrarAlerta()">
+        <br>
+        <input type="button" value="confirm" onClick="confirmar()">
+        <br>
+        <input type="button" value="prompt" onClick="cargarCadena()">
+    </form>
+
+    <script>
+        function abrir() {
+            let ventana = open();
+            ventana.document.write("Estoy escribiendo en la nueva ventana<br>");
+            ventana.document.write("Segunda linea");
+            }
+
+        function abrirParametros() {
+            let ventana = open('', '', 'status=yes,width=400,height=250,menubar=yes');
+            ventana.document.write("Esto es lo primero que aparece<br>");
+        }
+
+        function mostrarAlerta() {
+            alert("Esta ventana de alerta ya la utilizamos en otros problemas.");
+        }
+
+        function confirmar() {
+            let respuesta = confirm("Presione alguno de los dos botones");
+            if (respuesta == true)
+                alert("presionó aceptar");
+            else
+                alert("presionó cancelar");
+        }
+
+        function cargarCadena() {
+            let cad = prompt("cargue una cadena:");
+            alert("Usted ingreso " + cad);
+        }
+    </script>
+</body>
+
+</html>
